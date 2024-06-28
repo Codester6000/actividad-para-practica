@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario">
+        <input type="text" id="nombre"  placeholder="ingrese Nombre" ><br/>
+        
+        <input type="number" id="edad" placeholder="ingrese Edad" ><br/>
+        <input type="number" id="Altura" placeholder="ingrese Altura" ><br/>
+        <input type="text" id="email" placeholder="ingrese mail" ><br/>
+        <button type="submit" id="enviar" >submit</button>
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+        const formulario = document.getElementById("formulario")
+        let resultado = document.getElementById("resultado")
+
+        formulario.onsubmit = (e) => {
+            e.preventDefault()
+            let nombre = formulario["nombre"].value
+            let edad = formulario["edad"].value
+            let Altura = formulario["Altura"].value
+            let email = formulario["email"].value                               
+            if (nombre === "" ){
+                resultado.innerText = "nombre es obligatorio"
+                resultado.style.color = "red"
+            }else if(edad === "" ){
+                resultado.innerText = "edad es obligatorio"
+                resultado.style.color = "red"
+            }else if (edad < 0 ){
+                resultado.innerHTML = "edad tiene que ser un numero positivo"
+                resultado.style.color = "red"
+            }else if (edad < 18 ){
+                resultado.innerHTML = "edad tiene que ser mayor 18"
+                resultado.style.color = "red"
+            }else if(Altura === "" ){
+                resultado.innerHTML = "altura es obligatorio"
+                resultado.style.color = "red"
+            }else if (Altura < 0 ){
+                resultado.innerHTML = "la altura tiene que ser positiva"
+                resultado.style.color = "red"
+            }else if (Altura > 230 ){
+                resultado.innerHTML = "la altura tiene que ser menor 230"
+                resultado.style.color = "red"
+            }else if(email === "" ){
+                resultado.innerHTML = "email es obligatorio"
+                resultado.style.color = "red"
+            }else if (!email.includes("@") ){
+                resultado.innerHTML = "@ es obligatorio"
+                resultado.style.color = "red"
+            }else {
+                resultado.innerHTML = "todo es correcto"
+                resultado.style.color = "green"
+            }
+                
+               
+        }
+
+            
+
+
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+    </script>
+</body>
+</html>

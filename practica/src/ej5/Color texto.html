@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="contenedor">
+        <p id="texto" style="font-size: 400%;">texto</p>
+
+    </div>
+    <div>
+        <label >color texto</label>
+        <select name="color texto" id="colort">
+            <option value="red">rojo</option>
+            <option value="blue">azul</option>
+            <option value="green">verde</option>
+            <option value="black">negro</option>
+        </select>
+
+    </div>
+    <div>
+        <label > color fondo</label>
+        <select name="color fondo" id="colorf">
+            <option value="red">rojo</option>
+            <option value="blue">azul</option>
+            <option value="green">verde</option>
+            <option value="black">negro</option>
+        </select>
+
+    </div>
+    <script>
+        const texto = $("texto")
+        const colorf = $("colorf")
+        const colort = $("colort")
+        const contenedor = $("contenedor")
+
+        colort.onchange = () => {
+            texto.style.color = colort.value;
+        }       
+
+        colorf.onchange = () => {
+            texto.style.backgroundColor = colorf.value
+        }
+        
+        
+        
+        
+        function $(elemento) {
+        return document.getElementById(elemento);
+      }
+    </script>
+</body>
+</html>

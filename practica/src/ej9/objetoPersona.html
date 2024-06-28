@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>listado de persona</h1>
+    <ol id="listado"></ol>
+    
+</body>
+<script>
+    const listado =$("listado")
+
+    const personas = [
+        {nombre: "pepe", apellido:"sanchez",edad:13},
+        {nombre: "pedro", apellido:"mora",edad:13},
+        {nombre: "pipe", apellido:"calco",edad:13}
+    ]
+    
+    personas.forEach((persona) =>{
+        const item = document.createElement("li")
+        item.textContent= `${persona.nombre},${persona.apellido},${persona.edad}`
+        listado.appendChild(item)
+    })
+    
+    
+    function $(elemento) {
+        return document.getElementById(elemento);
+    }
+</script>
+</html>

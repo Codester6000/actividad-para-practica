@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label >IMC</label>
+    <div>
+        
+        <input type="number" id="peso" placeholder="peso">
+        <input type="number" id="altura" placeholder="altura">
+        <button id="Calcular" onclick="resultado()">Calcular</button>
+
+    </div>
+    
+    <script>
+        
+        
+        
+        function resultado () {
+            const peso = +($("peso").value)
+            const altura = +($("altura").value)
+            const resultado1 = peso/(altura*altura)
+            alert(`tu imc es de ${resultado1.toFixed(2)}`)
+        }
+
+
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+
+
+    </script>
+</body>
+</html>

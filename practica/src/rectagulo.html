@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label >ingrese lado A</label>
+    <input type="number" id="ladoa">
+    <label >ingrese lado B</label>
+    <input type="number" id="ladob">
+    <label >ingrese lado C</label>
+    <input type="number" id="ladoc">
+    <button onclick="resultado()">calcular</button>
+    <p id="formaA"></p>
+
+    <script>
+        function resultado() {
+            const ladoA = +($("ladoa").value)
+            const ladoB = +($("ladob").value)
+            const ladoC = +($("ladoc").value)
+            const formaA = $("formaA")
+            const forma1 = +(ladoB*ladoC)
+            const forma2 = +(ladoB*(ladoA-ladoC))
+            const formafinal = +(forma1+forma2)
+            formaA.innerHTML = formafinal
+
+
+        }
+
+
+        function $(elemento) {
+            return document.getElementById(elemento)
+        }
+
+    </script>
+
+</body>
+
+</html>

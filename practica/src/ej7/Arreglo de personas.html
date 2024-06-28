@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>listado de persona</h1>
+    <ul id="listado"></ul>
+    
+</body>
+<script>
+    const personas = ["pepe","maria","juan","pedro","cacho"]
+
+    const listado = $("listado");
+
+    
+    /*
+    for (let i=0;i<5;i++){
+        const item = document.createElement("li")
+        item.textContent = personas[i];
+        listado.appendChild(item)
+    }  */
+
+    /*
+    for (const persona of personas) {
+        const item = document.createElement("li")
+        item.textContent = persona;
+        listado.appendChild(item)
+
+    } */
+ 
+    /*
+    personas.forEach((persona)=>{
+        const item = document.createElement("li")
+        item.textContent = persona;
+        listado.appendChild(item)
+
+    }) */
+
+    personas.map((persona)=>{
+        const item = document.createElement("li")
+        item.textContent = persona;
+        listado.appendChild(item)
+        
+    })
+
+    
+
+    function $(elemento) {
+        return document.getElementById(elemento);
+    }
+</script>
+</html>

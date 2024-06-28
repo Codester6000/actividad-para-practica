@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>listado de personas</h1>
+    <form id="formulario">
+        <label for="nombre">nombre</label>
+        <input id=nombre type="text">
+        <button type="submit">agregar</button>
+        
+        <ul id="listado"></ul>
+
+    </form>
+
+</body>
+<script>
+    const formulario = $("formulario")
+    const listado = $("listado")
+    const nombre = $("nombre")
+
+    formulario.onsubmit = (e) => {
+        if (nombre.value !== ""){
+
+            const item = document.createElement("li")
+            item.textContent = nombre.value
+            nombre.value = ""
+            listado.appendChild(item)
+            
+            const btitem = document.createElement("button")
+            btitem.textContent = "quitar"
+            listado.appendChild(btitem)
+            btitem.onclick = () => {
+                if (confirm(`¿ desea borar el item ${item.Content}`))
+                    btitem.remove()
+                    item.remove()
+            }
+        }
+        e.preventDefault()
+    }
+    
+    
+    
+    function $(Elemento){
+        return document.getElementById(Elemento)
+    }
+</script>
+
+</html>
