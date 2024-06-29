@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="contador">10</p>
+    <button onclick="Incrementar" id="incrementa">incrementar</button>
+    <button onclick="Decrementar" id="decrece">decrementar</button>
+    
+
+
+    <script>
+        const contador = $("contador")
+        const incrementa = $("incrementa")
+        const decrece = $("decrece")
+
+        function Incrementar () {
+            const contador = +($("contador").value)
+            const contador1 = contador +1
+            contador.innerHTML= contador1
+            if (contador1 > 20) {
+                incrementa.innerHTML.disable
+                decrece.innerHTML.disable
+
+            }else if(contador1 <0){
+                incrementa.innerHTML.disable
+                decrece.innerHTML.disable
+
+            }
+        }
+
+        function Decrementar () {
+            const contador = +($("contador").value)
+            const contador1 = contador -2
+            contador.innerHTML= contador1
+            if (contador1 > 20) {
+                incrementa.innerHTML.disable
+                decrece.innerHTML.disable
+            }else if(contador1 <0){
+                incrementa.innerHTML.disable
+                decrece.innerHTML.disable
+
+            }
+        }
+        
+        
+        
+        
+        function $(elemento) {
+        return document.getElementById(elemento);
+    }
+    </script>
+</body>
+</html>
